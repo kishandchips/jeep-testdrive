@@ -1,0 +1,8 @@
+#wrap #main #page {
+	border-left: 1px solid #CCC;
+	border-right: 1px solid #CCC;
+}
+
+#wrap .bg-bottom .inner .car-left {
+	top: 0;
+}

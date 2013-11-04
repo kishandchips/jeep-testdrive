@@ -1,0 +1,28 @@
+@mixin avenir-regular {
+	font-family:'Avenir Next LT W01 SC';
+	font-weight: normal;
+}
+
+.avenir-regular {
+	@include avenir-regular;
+}
+
+@mixin avenir-medium {
+	font-family:'AvenirNextLTW01-MediumS';
+	font-weight: normal;
+}
+
+.avenir-medium {
+	@include avenir-medium;
+}
+
+@mixin avenir-bold {
+	font-family:'AvenirNextLTW01-BoldSC';
+	font-weight: normal;
+}
+
+.avenir-bold {
+	@include avenir-bold;
+}
+
+

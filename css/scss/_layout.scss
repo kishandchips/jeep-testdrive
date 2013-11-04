@@ -1,0 +1,251 @@
+html {
+	height: 100%;
+	font-size: 62.5%;
+
+	@include device-width(10) {
+		font-size: 61%;
+	}
+
+	@include device-width(9) {
+		font-size: 60%;
+	}
+
+	@include device-width(8) {
+		font-size: 59%;
+	}
+
+	@include device-width(7) {
+		font-size: 58%;
+	}
+
+	@include device-width(6) {
+		font-size: 57%;
+	}
+
+	@include device-width(5) {
+		font-size: 56%;
+	}
+
+	@include device-width(4) {
+		font-size: 55%;
+	}
+}
+
+body {
+	@include avenir-medium;
+	height: 100%;
+	color: #333;
+	@include font-size(14);
+	background: #000;
+	// -webkit-font-smoothing: antialiased;	
+}
+
+#header {
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 17px;
+
+	#logo {
+		width: 120px;
+		height: 90px;
+		overflow: hidden;
+		text-indent: -9999px;
+		display: block;
+		background: url('../images/logos/header_logo.png') center center no-repeat;
+		margin: 17px auto 30px;
+	}
+
+	.title {
+		color: #ffb302;
+	}
+
+	.tagline {
+		@include font-size(15);
+		color: #a37a18;
+
+		span {
+			display: block;
+			text-transform: uppercase;
+			font-size: 3rem;
+			@include avenir-regular;
+		}
+
+		a {
+			display: block;
+			margin: 10px auto 0;
+			width: 20px;
+			color: #a37a18;
+			@include font-size(30);
+		}
+	}
+}
+
+#wrap {
+	overflow: hidden;
+
+	.wrap-inner {
+		position: relative;
+	}
+
+	#main {
+		position: relative;
+
+		.bg-montage {
+			position: absolute;
+			height: 282px;
+			width: 100%;
+			background: url('../images/backgrounds/montage.jpg') center center no-repeat;
+			z-index: 0;
+			top: 20%;
+		}
+
+		#page {
+			border-bottom: 5px solid #ffb302;		
+			box-shadow: 6px 0px 15px -5px #a37a18, -6px 0px 15px -5px #a37a18;
+			margin-bottom: 140px;
+
+			#content {
+				background: #000;
+
+				.header-image {
+					img {
+						display: block;
+					}
+				}
+
+				.top-message {
+					padding: 0 30px;
+					color: #333;
+					background: #ededed;
+					line-height: 1.5;
+
+					@include device-width(4) {
+						padding: 0 15px;
+
+						h3 {
+							@include font-size(15);
+						}
+					}
+				}
+
+				.inner {
+					padding: 0 30px;
+				}
+			}			
+		}
+	}
+
+	.bg-bottom {
+		height: 40%;
+		position: absolute;
+		bottom: 0;
+		z-index: -1;
+		width: 100%;
+		background-color: #000; // Old browsers
+		@include filter-gradient(#000, #333333, vertical); // IE6-9
+		@include background-image(linear-gradient(top,  #000 0%,#000 5%,#333333 50%,#333333 100%));		
+
+		
+		.inner {
+			position: relative;
+			height:100%;
+
+			.car-left {
+				position: absolute;
+				left: -15%;
+				top: -10%;
+				width: 37%;
+				height: 37%;
+				background-image: url('../images/backgrounds/car-bottom-left.png');
+				background-size: contain;
+				background-repeat: no-repeat;
+
+			}
+
+			.car-right {
+				position: absolute;
+				right: 0;
+				bottom: 0px;
+				width: 43%;
+				height: 53%;
+				background: url('../images/backgrounds/car-bottom-right.png');
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: left bottom;
+			}				
+		}
+	}	
+		
+	#footer {
+		@include box-shadow(-2px -2px 3px #FFF);
+		background: #000;
+		color: #989898;
+
+		#ajax-page{
+			position: relative;
+			background: #efefef;
+			@include box-shadow(1px 1px 10px #CCC inset);
+
+			p {
+				@include font-size(10);
+			}
+
+			.loader {
+				display: block;
+				padding: 10px 0;
+				width: 64px;
+				height: 8px;
+				background: url(../images/misc/ajax-loader.gif) no-repeat center center;
+				position: absolute;
+				left: 50%;
+				top: 0;
+				margin-left: -(64px / 2);
+				z-index: 200;
+			}
+
+			.close-button {
+				position: absolute;
+				right: 10px;
+				top: 10px;
+				width: 30px;
+				height: 30px;
+				background: url(../images/icons/close.png);
+				background-repeat: no-repeat;
+				background-position: top left;
+				cursor: pointer;
+				z-index: 50;
+				border: none;
+				display: block;
+
+				&:hover {
+					background-repeat: no-repeat;
+					background-position: bottom left;					
+				}
+			}		
+		}			
+
+		.container {
+			max-width: 900px;
+			padding: 20px;
+
+			@include device-width(5) {
+				margin: 0;
+			}
+
+			.two {
+				text-transform: lowercase;
+			}
+
+			.footer-text {
+				font-family: Arial;
+				@include font-size(8);
+
+				a {
+					text-decoration: underline;
+				}
+			}
+		}
+	}	
+}
+
+
