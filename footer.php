@@ -15,7 +15,12 @@
 				<?php endif; ?>
 			</div>			
 			<div class="span two break-on-mobile">
-				<?php _e('&copy; 2013 jeep'); ?>
+				<a href="http://www.jeep.co.uk">
+					<?php _e('&copy; 2013 jeep'); ?>
+				</a><br><br>
+				<a href="http://www.jeep.co.uk">
+					<?php _e('www.jeep.co.uk'); ?>	
+				</a>				
 			</div>
 		</div>
 	</footer><!-- #colophon -->

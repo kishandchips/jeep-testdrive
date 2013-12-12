@@ -42,7 +42,7 @@
 				</h1>
 				<h2 class="tagline">
 					<?php bloginfo( 'description' ); ?>
-					<span>0870 240 4848</span>
+					<span>0203 675 6918</span>
 					<a class="scroll-to-btn" href="#start" data-icon="3"></a href="#top">
 				</h2>						
 			</div>

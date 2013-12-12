@@ -37,7 +37,7 @@
 
 a {
 	text-decoration: none;
-	color: #000000;
+	color: #ffb302;
 	cursor: pointer;
 	@include transition(all 0.3s ease);
 }
@@ -703,11 +703,16 @@ $total_columns: length($columns);
 	    border-radius: 0;
 	    -webkit-appearance: none;
 	    border-radius: 0;
-	    background: #333;	    
+	    background: #333;	  
+	    font-family: sans-serif;  
 	}
 
 	input[type="radio"]:checked+label, input[type="checkbox"]:checked+label {
 		font-weight: normal !important;
+	}
+
+	input.datepicker {
+		width: 100% !important;
 	}
 
 	.hideradio input[type="radio"] {
@@ -778,6 +783,17 @@ $total_columns: length($columns);
 				}
 			}
 
+			&.information {
+				li {
+					float: left;
+					width: 25%;
+
+					@include device-width(5) {
+						width: 50%;
+					}
+				}
+			}
+
 			&.selectbox {
 				border: 1px solid #989898;
 				border-top: 7px solid #989898;
@@ -843,6 +859,12 @@ $total_columns: length($columns);
 						@include inline-block;
 					}
 				}	
+
+				.ajax-btn {
+					text-decoration: underline;
+					font-size: 13px;
+					line-height: 15px;					
+				}				
 			}
 		}
 	}
@@ -862,7 +884,8 @@ $total_columns: length($columns);
 		}
 
 		.gsection_title {
-			@include avenir-medium;
+			font-family: sans-serif;
+			font-weight: normal;
 			@include font-size(20);
 			text-transform: uppercase;
 			color: #ffb302;
@@ -871,6 +894,12 @@ $total_columns: length($columns);
 
 	.validation_error {
 		text-transform: uppercase;
+	}
+
+	.gfield_description {
+		color: #989898;
+		font-style: italic;
+		font-size: 10px;		
 	}
 
 	#gforms_confirmation_message {
@@ -942,6 +971,10 @@ $total_columns: length($columns);
 	}
 }
 
+#ui-datepicker-div {
+	background: #FFF;
+}
+
 	.selecter-element { *left: -999999px; position: absolute; opacity: 0; display: none; }
 
 	.selecter {
@@ -967,6 +1000,7 @@ $total_columns: length($columns);
 			text-overflow: clip; 
 			color: #989898;
 			z-index: 49; 
+			font-family: sans-serif;
 		}	
 
 		.selecter-options { 

@@ -78,19 +78,13 @@
 					main.ajaxPage.container.html('');
 				});
 				$('html, body').animate({scrollTop: main.ajaxPage.scrollPosition}, 300);
-
-				if(Modernizr.history) {
-					var url = baseUrl;
-					history.pushState({page:url}, url, url);
-				}								
+								
 			},
 
 			load: function(url){
 
 				var container = main.ajaxPage.container,
 					ajaxUrl = main.ajaxUrl(url);
-
-			    if(Modernizr.history) history.pushState(null, null, url);
 
 			    container.slideDown('2000');
 			    $('html, body').animate({scrollTop: container.offset().top}, 800, 'easeInOutQuad');
@@ -170,6 +164,9 @@
 
 	$(window).load(function(){
 		main.loaded();
+		if(window.location.hash == '#terms-and-conditions') {
+		  $('.footer-text a').click();
+		}			
 	});
 
 })(jQuery);

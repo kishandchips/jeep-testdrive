@@ -62,12 +62,11 @@ function generate_xml($entry, $form) {
 			<CompanyAddress3>'.$entry['9'].'</CompanyAddress3>
 			<CompanyAddress4>'.$entry['10'].'</CompanyAddress4>
 			<CompanyPostCode>'.$entry['11'].'</CompanyPostCode>
-			<EmailAddress>'.$entry['12'].'</EmailAddress>
+			<EmailAddress>'.$entry['23'].'</EmailAddress>
 			<TelephoneNumber>'.$entry['13'].'</TelephoneNumber>
 			<MobileNumber>'.$entry['14'].'</MobileNumber>
-			<Model>'.$entry['15'].'</Model>
-			<FuelType>'.$entry['16'].'</FuelType>
-			<TypeofGearBox>'.$entry['17'].'</TypeofGearBox>
+			<PreferredDate>'.$entry['22'].'</PreferredDate>
+			<Model>'.$entry['24'].'</Model>
 			<CurrentCarRegistrationNumber>'.$entry['18'].'</CurrentCarRegistrationNumber>
 		</TestDriveBookingjeep>
 	</TestDriveBookingsjeep>
@@ -81,7 +80,7 @@ function generate_xml($entry, $form) {
 	$xml_file = fopen($location, 'r');
 	
 	$curl = curl_init();
- 	curl_setopt($curl, CURLOPT_URL, 'ftp://jeep:34Solution@176.35.225.193/WebEnquiry/entry_'.$entry['id'].'.xml');
+ 	curl_setopt($curl, CURLOPT_URL, 'ftp://Fiat:34Solution@176.35.225.193/WebEnquiry/jeep_entry_'.$entry['id'].'.xml');
  	curl_setopt($curl, CURLOPT_UPLOAD, 1);
  	curl_setopt($curl, CURLOPT_HTTPHEADER, Array("Content-Type: text/xml")); 
  	curl_setopt($curl, CURLOPT_PUT, 1);

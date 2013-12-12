@@ -62,6 +62,7 @@ body {
 	.tagline {
 		@include font-size(15);
 		color: #a37a18;
+		font-family: sans-serif;
 
 		span {
 			display: block;
@@ -101,7 +102,7 @@ body {
 
 		#page {
 			border-bottom: 5px solid #ffb302;		
-			box-shadow: 6px 0px 15px -5px #a37a18, -6px 0px 15px -5px #a37a18;
+			@include box-shadow(0px 0px 25px #a37a18);
 			margin-bottom: 140px;
 
 			#content {
@@ -115,9 +116,13 @@ body {
 
 				.top-message {
 					padding: 0 30px;
-					color: #333;
-					background: #ededed;
+					color: #fff;
+					background: #292929;
 					line-height: 1.5;
+
+					h3 {
+						font-family: sans-serif;
+					}
 
 					@include device-width(4) {
 						padding: 0 15px;
@@ -171,13 +176,13 @@ body {
 				background: url('../images/backgrounds/car-bottom-right.png');
 				background-size: contain;
 				background-repeat: no-repeat;
-				background-position: left bottom;
+				background-position: right bottom;
 			}				
 		}
 	}	
 		
 	#footer {
-		@include box-shadow(-2px -2px 3px #FFF);
+		@include box-shadow(-2px -2px 3px #000);
 		background: #000;
 		color: #989898;
 
@@ -186,8 +191,27 @@ body {
 			background: #efefef;
 			@include box-shadow(1px 1px 10px #CCC inset);
 
+			h1 {
+				font-family: sans-serif;
+				a {
+					color: #333;
+					font-family: sans-serif;
+				}
+			}
+
+			h5, h6 {
+				font-family: sans-serif;
+			}
+
 			p {
-				@include font-size(10);
+				@include font-size(13);
+				margin: 20px 0;
+				font-family: sans-serif;
+
+				a {
+					text-decoration: underline;
+					color: #333;
+				}
 			}
 
 			.loader {
@@ -239,6 +263,7 @@ body {
 			.footer-text {
 				font-family: Arial;
 				@include font-size(8);
+				text-align: right;
 
 				a {
 					text-decoration: underline;
