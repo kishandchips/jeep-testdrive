@@ -56,18 +56,20 @@ function generate_xml($entry, $form) {
 			<Title>'.$entry['2'].'</Title>
 			<FirstName>'.$entry['3'].'</FirstName>
 			<LastName>'.$entry['4'].'</LastName>
-			<Companyname>'.$entry['6'].'</Companyname>
-			<CompanyAddress1>'.$entry['7'].'</CompanyAddress1>
-			<CompanyAddress2>'.$entry['8'].'</CompanyAddress2>
-			<CompanyAddress3>'.$entry['9'].'</CompanyAddress3>
-			<CompanyAddress4>'.$entry['10'].'</CompanyAddress4>
-			<CompanyPostCode>'.$entry['11'].'</CompanyPostCode>
+			<Address>'.$entry['6'].'</Address>
+			<PostCode>'.$entry['11'].'</PostCode>
 			<EmailAddress>'.$entry['23'].'</EmailAddress>
 			<TelephoneNumber>'.$entry['13'].'</TelephoneNumber>
 			<MobileNumber>'.$entry['14'].'</MobileNumber>
 			<PreferredDate>'.$entry['22'].'</PreferredDate>
 			<Model>'.$entry['24'].'</Model>
 			<CurrentCarRegistrationNumber>'.$entry['18'].'</CurrentCarRegistrationNumber>
+			<UseOfData>
+				<Post>'.$entry['25.1'].'</Post>
+				<Telephone>'.$entry['25.2'].'</Telephone>
+				<Email>'.$entry['25.3'].'</Email>
+				<SMS>'.$entry['25.4'].'</SMS>
+			</UseOfData>			
 		</TestDriveBookingjeep>
 	</TestDriveBookingsjeep>
 	';
