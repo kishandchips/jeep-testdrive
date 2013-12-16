@@ -46,6 +46,37 @@ if ( ! function_exists( 'custom_tinymce_options' )) {
 
 add_image_size( 'header_image', 630, 323, true);
 
+add_action("gform_field_standard_settings", "custom_gform_standard_settings", 10, 2);
+function custom_gform_standard_settings($position, $form_id){
+    if($position == 25){
+    	?>
+        <li style="display: list-item; ">
+            <label for="field_placeholder">Placeholder Text</label>
+            <input type="text" id="field_placeholder" size="35" onkeyup="SetFieldProperty('placeholder', this.value);">
+        </li>
+        <?php
+    }
+}
+
+add_action('gform_enqueue_scripts',"custom_gform_enqueue_scripts", 10, 2);
+function custom_gform_enqueue_scripts($form, $is_ajax=false){
+    ?>
+<script>
+    jQuery(function(){
+        <?php
+        foreach($form['fields'] as $i=>$field){
+            if(isset($field['placeholder']) && !empty($field['placeholder'])){
+                ?>
+                jQuery('#input_<?php echo $form['id']?>_<?php echo $field['id']?>').attr('placeholder','<?php echo $field['placeholder']?>');
+                <?php
+            }
+        }
+        ?>
+    });
+    </script>
+    <?php
+}
+
 add_action('gform_after_submission', 'generate_xml', 10, 2);
 function generate_xml($entry, $form) {
 
@@ -56,7 +87,10 @@ function generate_xml($entry, $form) {
 			<Title>'.$entry['2'].'</Title>
 			<FirstName>'.$entry['3'].'</FirstName>
 			<LastName>'.$entry['4'].'</LastName>
-			<Address>'.$entry['6'].'</Address>
+			<Address1>'.$entry['26'].'</Address1>
+			<Address2>'.$entry['27'].'</Address2>
+			<Address3>'.$entry['28'].'</Address3>
+			<Address4>'.$entry['29'].'</Address4>						
 			<PostCode>'.$entry['11'].'</PostCode>
 			<EmailAddress>'.$entry['23'].'</EmailAddress>
 			<TelephoneNumber>'.$entry['13'].'</TelephoneNumber>
@@ -64,12 +98,10 @@ function generate_xml($entry, $form) {
 			<PreferredDate>'.$entry['22'].'</PreferredDate>
 			<Model>'.$entry['24'].'</Model>
 			<CurrentCarRegistrationNumber>'.$entry['18'].'</CurrentCarRegistrationNumber>
-			<UseOfData>
-				<Post>'.$entry['25.1'].'</Post>
-				<Telephone>'.$entry['25.2'].'</Telephone>
-				<Email>'.$entry['25.3'].'</Email>
-				<SMS>'.$entry['25.4'].'</SMS>
-			</UseOfData>			
+			<UseOfDataPost>'.$entry['25.1'].'</UseOfDataPost>
+			<UseOfDataTelephone>'.$entry['25.2'].'</UseOfDataTelephone>
+			<UseOfDataEmail>'.$entry['25.3'].'</UseOfDataEmail>
+			<UseOfDataSMS>'.$entry['25.4'].'</UseOfDataSMS>
 		</TestDriveBookingjeep>
 	</TestDriveBookingsjeep>
 	';
