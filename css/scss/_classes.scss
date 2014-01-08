@@ -777,8 +777,14 @@ $total_columns: length($columns);
 
 						input[type="radio"]:checked+label span {
 							@include avenir-bold;
-							color: #FFF;
-						}					
+							color: #ffb302;
+						}	
+
+						input[type="radio"]+label.selected span {
+							font-family: sans-serif;
+							font-weight: bold;
+							color: #ffb302 !important;
+						}											
 					}
 				}
 			}
@@ -975,6 +981,16 @@ $total_columns: length($columns);
 	background: #FFF;
 }
 
+.ui-datepicker {
+	display: none;
+}
+
+.ui-datepicker th {
+	font-family: Arial;
+	text-shadow: none;
+	filter: none;
+}
+
 	.selecter-element { *left: -999999px; position: absolute; opacity: 0; display: none; }
 
 	.selecter {
@@ -1045,6 +1061,7 @@ $total_columns: length($columns);
 			padding: 8px 10px; 
 			text-overflow: ellipsis; 
 			width: 100%; 
+			font-family: Arial;
 
 			&.selected { 
 				background: #333; 

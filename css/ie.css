@@ -1,8 +1,17 @@
-#wrap #main #page {
-	border-left: 1px solid #CCC;
-	border-right: 1px solid #CCC;
-}
-
 #wrap .bg-bottom .inner .car-left {
 	top: 0;
+}
+
+#wrap #main #page {
+	box-shadow: none;
+	border: #ffb302 1px solid;
+	border-bottom: 5px solid #ffb302;
+}
+
+input[type=text], input[type=url], input[type=email], input[type=tel], input[type=number], input[type=password] {
+	line-height: 30px;
+}
+
+.selecter .selecter-selected {
+	padding: 2px 10px;
 }

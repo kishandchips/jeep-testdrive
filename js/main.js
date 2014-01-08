@@ -25,6 +25,11 @@
 			$('.selectbox.gear').append('<span data-icon="1" class="icon"></span>');
 
 			$("select").selecter();
+
+			$('.gfield_radio li').on('click', function(event) {
+				$('.gfield_radio li label').removeClass('selected');
+				$('label', this).addClass('selected');
+			});			
 		},
 
 
@@ -164,6 +169,10 @@
 
 	$(window).load(function(){
 		main.loaded();
+
+
+		$('.datepicker').datepicker('option', 'minDate', 3);
+				
 		if(window.location.hash == '#terms-and-conditions') {
 		  $('.footer-text a').click();
 		}			
